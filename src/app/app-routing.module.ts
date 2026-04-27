@@ -1,25 +1,50 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { sebastianComponent } from 'src/views/sebastian/sebastian.component';
+import { SebastianComponent } from 'src/views/sebastian/sebastian.component';
 import { ExperiencesComponent } from 'src/views/experiences/experiences.component';
+import { LandingComponent } from 'src/views/landing/landing.component';
+import { DanielaComponent } from 'src/views/daniela/daniela.component';
+import { GabrielComponent } from 'src/views/gabriel/gabriel.component';
+import { JoseComponent } from 'src/views/jose/jose.component';
+import { ManuelComponent } from 'src/views/manuel/manuel.component';
 
 const routes: Routes = [
   {
-    path: '', component: sebastianComponent
+    path: '',
+    component: LandingComponent,
   },
   {
-    path: 'admin', component: ExperiencesComponent
+    path: 'sebastian',
+    component: SebastianComponent,
   },
-  // {
-  //   path: 'admin/nueva-experiencia', component: ExperiencesFormComponent
-  // }
   {
-    path:'**', redirectTo: ''
-  }
+    path: 'daniela',
+    component: DanielaComponent,
+  },
+  {
+    path: 'gabriel',
+    component: GabrielComponent,
+  },
+  {
+    path: 'jose',
+    component: JoseComponent,
+  },
+  {
+    path: 'manuel',
+    component: ManuelComponent,
+  },
+  {
+    path: 'admin',
+    component: ExperiencesComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

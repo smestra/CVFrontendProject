@@ -1,0 +1,30 @@
+<div class="landing-container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
+    <div class="container-fluid">
+      <img src="assets/ESCUDO.jpg" style="max-width: 80px" alt="Escudo" class="me-2" />
+      <a class="navbar-brand mx-auto fw-bold" routerLink="/">
+        Repositorio CV Unicartagena
+      </a>
+      <img src="assets/ESCUDO.jpg" style="max-width: 80px" alt="Escudo" />
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="text-center mb-4">Estudiantes</h2>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let student of students">
+        <div class="card h-100 text-center">
+          <img
+            [src]="student.image"
+            [alt]="student.name"
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ student.name }}</h5>
+            <a [routerLink]="student.route" class="btn btn-lg btn-success">Ver CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

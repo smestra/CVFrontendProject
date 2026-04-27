@@ -5,18 +5,33 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { sebastianComponent } from '../views/sebastian/sebastian.component';
+import { SebastianComponent } from '../views/sebastian/sebastian.component';
 
 // import { ExperienceFormComponent } from './pages/admin/experience-form/experience-form.component';
 import { ExperiencesComponent } from 'src/views/experiences/experiences.component';
+import { LandingComponent } from 'src/views/landing/landing.component';
+import { DanielaComponent } from 'src/views/daniela/daniela.component';
+import { GabrielComponent } from 'src/views/gabriel/gabriel.component';
+import { JoseComponent } from 'src/views/jose/jose.component';
+import { ManuelComponent } from 'src/views/manuel/manuel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    sebastianComponent,
+    SebastianComponent,
     ExperiencesComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    LandingComponent,
+    DanielaComponent,
+    GabrielComponent,
+    JoseComponent,
+    ManuelComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

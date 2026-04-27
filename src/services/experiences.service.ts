@@ -15,15 +15,23 @@ private apiUrl = `${environment.apiUrl}/experiences`;
   getAllExperiences(): Observable<Experience[]> {
     return this.http.get<Experience[]>(this.apiUrl);
   }
+
+  getExperiencesByStudent(studentCode: number): Observable<Experience[]> {
+    return this.http.get<Experience[]>(`${this.apiUrl}?student=${studentCode.toString()}`);
+  }
+
   getExperienceById(id: string): Observable<Experience>{
     return this.http.get<Experience>(`${this.apiUrl}/${id}`)
   }
+
   postExperience(experience: Experience): Observable<Experience> {
     return this.http.post<Experience>(this.apiUrl, experience);
   }
+
   updateExperience(id: string, experience: Experience): Observable<Experience> {
     return this.http.put<Experience>(`${this.apiUrl}/${id}`, experience);
   }
+
   deleteExperience(id: string): Observable<void>{
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }

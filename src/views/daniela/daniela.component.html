@@ -1,10 +1,9 @@
-<!-- NAVBAR (igual al original, con Bootstrap) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
   <div class="container-fluid">
     <img src="assets/ESCUDO.jpg" style="max-width:80px" alt="Escudo"/>
     <a class="navbar-brand mx-auto fw-bold" routerLink="/">Repositorio CV Unicartagena</a>
-    <a routerLink="/admin" class="btn btn-outline-secondary btn-sm">⚙</a>
-    <img src="../../assets/ESCUDO.jpg" style="max-width:80px" alt="Escudo"/>
+    <a routerLink="/" class="btn btn-outline-secondary btn-sm">← Volver</a>
+    <img src="assets/ESCUDO.jpg" style="max-width:80px" alt="Escudo"/>
   </div>
 </nav>
 
@@ -12,43 +11,37 @@
 
   <div class="row mb-5">
     <div class="col-md-4 text-center">
-      <img src="../../assets/PicSebastian.png" class="img-fluid rounded shadow" alt="Foto Sebastián">
+      <img src="assets/Cc-1071351322 (1).jpg" class="img-fluid rounded shadow" alt="Foto Daniela">
     </div>
     <div class="col-md-8">
       <div class="card">
         <div class="card-header bg-primary text-white">Datos Personales</div>
         <div class="card-body">
-          <p><strong>Nombres y apellidos:</strong> Sebastián Mestra Gallego</p>
-          <p><strong>Cédula:</strong> 1067933111</p>
-          <p><strong>Sexo:</strong> Masculino</p>
-          <p><strong>Estado civil:</strong> Soltero</p>
-          <p><strong>Dirección:</strong> Avenida Siempre Viva 123</p>
-          <p><strong>Teléfono:</strong> 3178774184</p>
-          <p><strong>Correo:</strong> sebastianmestra@aol.com</p>
+          <p><strong>Nombres y apellidos:</strong> Daniela Eugenia Gómez Quiñones</p>
+          <p><strong>Cédula:</strong> 1071222333</p>
+          <p><strong>Sexo:</strong> Femenino</p>
+          <p><strong>Estado civil:</strong> Soltera</p>
+          <p><strong>Dirección:</strong> Calle Falsa 123 #45-46 Barrio Unidos - Bogotá</p>
+          <p><strong>Teléfono:</strong> 3213222324</p>
+          <p><strong>Correo:</strong> daniela@microsoft.com</p>
         </div>
       </div>
     </div>
   </div>
 
-
   <div class="card mb-4">
     <div class="card-header bg-success text-white">Perfil Profesional</div>
     <div class="card-body">
-      <p>Desarrollador de software con experiencia en la creación de aplicaciones
-      web y móviles. Habilidades en programación, diseño de interfaces y
-      resolución de problemas.</p>
+      <p>Soy una profesional comprometida, organizada y orientada a resultados, con habilidades en servicio al cliente, diseño, danza, edición de videos, reportera y presentadora, desarrollo web. Experiencia en el manejo eficiente de tareas, capacidad para trabajar en equipo y adaptarse a diferentes entornos laborales. Destaco por mi responsabilidad, comunicación asertiva y disposición para aprender y aportar soluciones innovadoras.</p>
     </div>
   </div>
-
 
   <div class="card mb-4">
     <div class="card-header bg-info text-white">Formación Académica</div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">I.E. José María Córdoba | <strong>Bachillerato (2014)</strong></li>
-        <li class="list-group-item">Universidad de Córdoba | <strong>Licenciatura en Inglés (2019)</strong></li>
-        <li class="list-group-item">Universidad Iberoamericana | <strong>Bootcamp MEAN (2023)</strong></li>
-        <li class="list-group-item">Universidad de Cartagena | <strong>Ingeniería de Software (En curso)</strong></li>
+        <li class="list-group-item">Colegio Nuestra Señora de Guadalupe | <strong>Bachillerato académico (2023)</strong></li>
+        <li class="list-group-item">Universidad de Cartagena | <strong>Pregrado en Ingeniería de Software (En curso)</strong></li>
       </ul>
     </div>
   </div>
@@ -71,7 +64,6 @@
 
       <p *ngIf="!loading && experiences.length === 0" class="text-muted fst-italic">
         No hay experiencias registradas aún.
-        <a routerLink="/admin/nueva">Agregar una.</a>
       </p>
 
       <div *ngIf="!loading && experiences.length > 0">
