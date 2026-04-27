@@ -4,11 +4,12 @@ import { Experience } from '../../models/experiences.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { STUDENT_CODES } from '../../constants/student.constants';
+import { ExperienceFormComponent } from '../../components/experience-form/experience-form.component';
 
 @Component({
   selector: 'app-manuel',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ExperienceFormComponent],
   templateUrl: './manuel.component.html',
   styleUrls: ['./manuel.component.css']
 })
@@ -16,12 +17,19 @@ export class ManuelComponent implements OnInit {
   experiences: Experience[] = [];
   loading = false;
   studentName = 'Manuel Hernández';
+  studentCode = STUDENT_CODES.MANUEL;
+  showFormModal = false;
+  editingExperience: Experience | null = null;
 
   constructor(private experiencesService: ExperiencesService) {}
 
   ngOnInit(): void {
+    this.loadExperiences();
+  }
+
+  loadExperiences(): void {
     this.loading = true;
-    this.experiencesService.getExperiencesByStudent(STUDENT_CODES.MANUEL).subscribe({
+    this.experiencesService.getExperiencesByStudent(this.studentCode).subscribe({
       next: (data) => {
         this.experiences = data;
         this.loading = false;
@@ -32,8 +40,39 @@ export class ManuelComponent implements OnInit {
     });
   }
 
+  openFormModal(): void {
+    this.editingExperience = null;
+    this.showFormModal = true;
+  }
+
+  editExperience(experience: Experience): void {
+    this.editingExperience = experience;
+    this.showFormModal = true;
+  }
+
+  deleteExperience(id: string): void {
+    if (confirm('¿Estás seguro de que deseas eliminar esta experiencia?')) {
+      this.experiencesService.deleteExperience(id).subscribe({
+        next: () => {
+          this.loadExperiences();
+        },
+        error: () => {
+          alert('Error al eliminar la experiencia');
+        }
+      });
+    }
+  }
+
+  onFormClose(): void {
+    this.showFormModal = false;
+  }
+
+  onFormSaved(): void {
+    this.loadExperiences();
+  }
+
   formatDate(date: string): string {
     return new Date(date).toLocaleDateString('es-CO', { year: 'numeric', month: 'long' });
   }
-}
 
+}

@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SebastianComponent } from '../views/sebastian/sebastian.component';
 
 // import { ExperienceFormComponent } from './pages/admin/experience-form/experience-form.component';
 import { ExperiencesComponent } from 'src/views/experiences/experiences.component';
@@ -14,11 +13,12 @@ import { DanielaComponent } from 'src/views/daniela/daniela.component';
 import { GabrielComponent } from 'src/views/gabriel/gabriel.component';
 import { JoseComponent } from 'src/views/jose/jose.component';
 import { ManuelComponent } from 'src/views/manuel/manuel.component';
+import { SebastianComponent } from 'src/views/sebastian/sebastian.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SebastianComponent,
+    
     ExperiencesComponent,
   ],
   imports: [
@@ -30,7 +30,8 @@ import { ManuelComponent } from 'src/views/manuel/manuel.component';
     DanielaComponent,
     GabrielComponent,
     JoseComponent,
-    ManuelComponent
+    ManuelComponent,
+    SebastianComponent
   ],
   bootstrap: [AppComponent]
 })
