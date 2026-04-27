@@ -11,8 +11,8 @@ import { ExperiencesService } from 'src/services/experiences.service';
 
 @Component({
   selector: 'app-experiences',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  standalone: false,
+
   templateUrl: './experiences.component.html',
   styleUrls: ['./experiences.component.css'],
 })
@@ -62,34 +62,6 @@ export class ExperiencesComponent implements OnInit {
         },
         error: () => {
           this.error = 'Error al tratar de eliminar la información';
-        },
-      });
-    }
-  }
-  updateExperience(id: string): void {
-    if (this.form.valid) {
-      this.experiencesService.updateExperience(id, this.form.value).subscribe({
-        next: () => {
-          this.showExperiences();
-          this.form.reset();
-          this.editingId = null;
-        },
-        error: () => {
-          this.error = 'Error al tratar de actualizar la información';
-        },
-      });
-    }
-  }
-
-  addExperience(): void {
-    if (this.form.valid) {
-      this.experiencesService.postExperience(this.form.value).subscribe({
-        next: () => {
-          this.showExperiences();
-          this.form.reset();
-        },
-        error: () => {
-          this.error = 'Error al tratar de agregar nueva experiencia laboral';
         },
       });
     }

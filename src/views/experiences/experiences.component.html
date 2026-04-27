@@ -14,29 +14,45 @@
   <div *ngIf="!loading && experiences.length > 0" class="experiences-list">
     <div *ngFor="let experience of experiences" class="experience-item">
       <div class="experience-header">
-        <h3> {{ experience.nombre }}</h3>
-        <span class="date-badge">{{ experience.fechaInicio | date}} - {{ experience.fechaFin | date }}</span>
+        <h3>{{ experience.nombre }}</h3>
+        <span class="date-badge"
+          >{{ experience.fechaInicio | date }} -
+          {{ experience.fechaFin | date }}</span
+        >
       </div>
 
-      
       <div class="experience-body">
-        <p class="empresa"><strong>{{ experience.empresa }}</strong></p>
+        <p class="empresa">
+          <strong>{{ experience.empresa }}</strong>
+        </p>
         <p class="nombre">{{ experience.cargo }}</p>
-        
+
         <p *ngIf="experience.descripcion" class="descripcion">
           {{ experience.descripcion }}
         </p>
       </div>
       <div class="experience-actions">
-        <button class="btn btn-sm btn-warning" (click)="updateExperience(experience._id)">Editar</button>
-        <button class="btn btn-sm btn-danger" (click)="deleteExperience(experience._id)">Borrar</button>
-        
+        <button
+          class="btn btn-sm btn-warning"
+          (click)="(experience)"
+        >
+          Editar
+        </button>
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="deleteExperience(experience._id)"
+        >
+          Borrar
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Sin experiencias -->
-  <div *ngIf="!loading && experiences.length === 0 && !error" class="no-experiences">
+  <div
+    *ngIf="!loading && experiences.length === 0 && !error"
+    class="no-experiences"
+  >
     <p>No hay experiencias registradas</p>
   </div>
 </div>

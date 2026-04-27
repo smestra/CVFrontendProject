@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CvComponent } from 'src/views/cv/cv.component';
+import { sebastianComponent } from 'src/views/sebastian/sebastian.component';
 import { ExperiencesComponent } from 'src/views/experiences/experiences.component';
 
 const routes: Routes = [
   {
-    path: '', component: CvComponent
+    path: '', component: sebastianComponent
   },
   {
     path: 'admin', component: ExperiencesComponent
