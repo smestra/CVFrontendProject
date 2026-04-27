@@ -1,0 +1,142 @@
+.experiences-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.experiences-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.experiences-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+.experience-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+/* Estados de carga y error */
+.loading,
+.error-message,
+.no-experiences {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  background-color: #fee;
+  border-left: 4px solid #e74c3c;
+  color: #c0392b;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+/* Lista de experiencias */
+.experiences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.experience-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 15px;
+}
+
+.experience-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+  flex: 1;
+}
+
+.date-badge {
+  background-color: #ecf0f1;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.experience-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empresa {
+  margin: 0;
+  font-size: 15px;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.nombre {
+  margin: 0;
+  font-size: 16px;
+  color: #141717;
+  font-weight: 500;
+}
+
+.descripcion {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .experiences-container {
+    padding: 15px;
+  }
+
+  .experiences-header h2 {
+    font-size: 20px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .experience-header h3 {
+    font-size: 16px;
+  }
+
+  .date-badge {
+    align-self: flex-start;
+  }
+
+  .experience-item {
+    padding: 15px;
+  }
+}
